@@ -21,3 +21,18 @@ Doom v1.2 had lower static limits than later versions, because they were raised 
 3. Go into the extracted folder and execute `./autogen.sh`. Some new files will appear, you shouldn't have to type `./configure`.
 4. Then you can run `make`, which will build the binaries.
 5. To remove the debugging symbols from the binaries, you can use `strip src/chocolate-*`.
+
+## Screenshots of Chocolate-Doom Plus in action in huge maps
+
+![doom85](https://cloud.githubusercontent.com/assets/6194072/20461637/cf6fe5ae-aed1-11e6-942c-9fd52c0235d6.png)
+![doom86](https://cloud.githubusercontent.com/assets/6194072/20461638/cf765362-aed1-11e6-868d-f7ef09f922c3.png)
+
+## FAQ
+
+##### Q. Are you going to add support for other engines? 
+
+A. No. The original Doom-plus hack didn't support engines other than DOOM. 
+
+##### Q. I get a `solidseg` overflow in some levels. Can you fix this?
+
+A. No. The Doom-plus hack didn't change this limit. As far as I know, it only happens on huge levels when you go out of the map, so don't do this. 
