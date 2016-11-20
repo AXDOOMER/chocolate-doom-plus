@@ -52,7 +52,7 @@ void BindCompatibilityVariables(void)
     {
         M_BindIntVariable("vanilla_savegame_limit", &vanilla_savegame_limit);
         M_BindIntVariable("vanilla_demo_limit",     &vanilla_demo_limit);
-		M_BindIntVariable("doom_plus_limits",       &doom_plus_limits);
+        M_BindIntVariable("doom_plus_limits",       &doom_plus_limits);
     }
 }
 
