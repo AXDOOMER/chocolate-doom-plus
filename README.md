@@ -6,6 +6,8 @@ This project is a fork of Chocolate-Doom that aims to implement the ability to r
 
 These are the static limits of Doom plus: http://prboom-plus.sourceforge.net/doom-plus.features.html
 
+Link to the original hack: https://www.doomworld.com/idgames/utils/exe_edit/doomhack
+
 Doom v1.2 had lower static limits than later versions, because they were raised to accomodate Doom 2 which has bigger levels. Doom v1.2 compatibility is not the main objective though, it's only to make it easy to change the limits. Some changes are documented here: https://tcrf.net/Doom_(PC,_1993)/Revisional_Differences
 
 ## How to build it by yourself on Linux:
