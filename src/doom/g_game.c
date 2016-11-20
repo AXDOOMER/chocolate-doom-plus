@@ -229,6 +229,7 @@ int		bodyqueslot;
  
 int             vanilla_savegame_limit = 1;
 int             vanilla_demo_limit = 1;
+int             doom_plus_limits = 0;
  
 int G_CmdChecksum (ticcmd_t* cmd) 
 { 
