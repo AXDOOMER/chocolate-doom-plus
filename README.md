@@ -6,4 +6,12 @@ This project is a fork of Chocolate-Doom that aims to implement the ability to r
 
 These are the static limits of Doom plus: http://prboom-plus.sourceforge.net/doom-plus.features.html
 
-Doom v1.2 had lower static limits than later versions, because they were raised to accomodate Doom 2 which has bigger levels. Doom v1.2 compatibility is not the main objective though, it's only to make it easy to change the limits. Some changes are documented here, but may not be accurate: https://tcrf.net/Doom_(PC,_1993)/Revisional_Differences
+Doom v1.2 had lower static limits than later versions, because they were raised to accomodate Doom 2 which has bigger levels. Doom v1.2 compatibility is not the main objective though, it's only to make it easy to change the limits. Some changes are documented here: https://tcrf.net/Doom_(PC,_1993)/Revisional_Differences
+
+## How to build it by yourself on Linux:
+
+1. Download the source code from the GitHub repository.
+2. Make sure all of this is installed: `gcc make automake libsdl1.2-dev libsdl-net1.2-dev libsdl-mixer1.2-dev python-imaging`
+3. Go into the extracted folder and execute `./autogen.sh`. Some new files will appear, you shouldn't have to type `./configure`.
+4. Then you can run `make`, which will build the binaries.
+5. To remove the debugging symbols from the binaries, you can use `strip src/chocolate-*`.
