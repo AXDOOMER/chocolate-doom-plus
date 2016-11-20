@@ -10,6 +10,10 @@ Link to the original hack: https://www.doomworld.com/idgames/utils/exe_edit/doom
 
 Doom v1.2 had lower static limits than later versions, because they were raised to accomodate Doom 2 which has bigger levels. Doom v1.2 compatibility is not the main objective though, it's only to make it easy to change the limits. Some changes are documented here: https://tcrf.net/Doom_(PC,_1993)/Revisional_Differences
 
+## How to enable the new limits from Doom Plus?
+
+![screenshot at 2016-11-20 02 51 14](https://cloud.githubusercontent.com/assets/6194072/20461441/7b183a88-aecc-11e6-99bb-aee2bf33b2a2.png)
+
 ## How to build it by yourself on Linux:
 
 1. Download the source code from the GitHub repository.
