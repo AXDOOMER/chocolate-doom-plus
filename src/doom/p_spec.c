@@ -1466,8 +1466,7 @@ void P_SpawnSpecials (void)
             if ((!doom_plus_limits && numlinespecials >= MAXLINEANIMS / DOOM_PLUS_MAXLINEANIMS_FACTOR)
                 || (doom_plus_limits && numlinespecials >= MAXLINEANIMS))
             {
-                I_Error("Too many scrolling wall linedefs! "
-                        "(Vanilla limit is 64)");
+                I_Error("Too many scrolling wall linedefs!");
             }
 	    // EFFECT FIRSTCOL SCROLL+
 	    linespeciallist[numlinespecials] = &lines[i];
