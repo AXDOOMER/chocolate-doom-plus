@@ -32,6 +32,8 @@
 #include "r_local.h"
 #include "r_sky.h"
 
+#include "dplimits.h"
+
 
 
 planefunction_t		floorfunc;
@@ -235,7 +237,8 @@ R_FindPlane
     if (check < lastvisplane)
 	return check;
 		
-    if (lastvisplane - visplanes == MAXVISPLANES)
+    if ((!doom_plus_limits && lastvisplane - visplanes == MAXVISPLANES / DOOM_PLUS_MAXVISPLANES_FACTOR) 
+        || (doom_plus_limits && lastvisplane - visplanes == MAXVISPLANES))
 	I_Error ("R_FindPlane: no more visplanes");
 		
     lastvisplane++;
@@ -367,7 +370,8 @@ void R_DrawPlanes (void)
     int                 lumpnum;
 				
 #ifdef RANGECHECK
-    if (ds_p - drawsegs > MAXDRAWSEGS)
+    if ((!doom_plus_limits && ds_p - drawsegs > MAXDRAWSEGS / DOOM_PLUS_MAXDRAWSEGS_FACTOR)
+        || (doom_plus_limits && ds_p - drawsegs > MAXDRAWSEGS))
 	I_Error ("R_DrawPlanes: drawsegs overflow (%i)",
 		 ds_p - drawsegs);
     
@@ -375,7 +379,8 @@ void R_DrawPlanes (void)
 	I_Error ("R_DrawPlanes: visplane overflow (%i)",
 		 lastvisplane - visplanes);
     
-    if (lastopening - openings > MAXOPENINGS)
+    if ((!doom_plus_limits && lastopening - openings > MAXOPENINGS / DOOM_PLUS_MAXOPENINGS_FACTOR)
+        || (doom_plus_limits && lastopening - openings > MAXOPENINGS))
 	I_Error ("R_DrawPlanes: opening overflow (%i)",
 		 lastopening - openings);
 #endif

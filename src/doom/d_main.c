@@ -76,6 +76,8 @@
 
 #include "d_main.h"
 
+#include "dplimits.h"
+
 //
 // D-DoomLoop()
 // Not a globally visible function,

@@ -47,6 +47,8 @@
 // Data.
 #include "sounds.h"
 
+#include "dplimits.h"
+
 
 //
 // Animating textures and planes
@@ -1461,7 +1463,8 @@ void P_SpawnSpecials (void)
 	switch(lines[i].special)
 	{
 	  case 48:
-            if (numlinespecials >= MAXLINEANIMS)
+            if ((!doom_plus_limits && numlinespecials >= MAXLINEANIMS / DOOM_PLUS_MAXLINEANIMS_FACTOR)
+                || (doom_plus_limits && numlinespecials >= MAXLINEANIMS))
             {
                 I_Error("Too many scrolling wall linedefs! "
                         "(Vanilla limit is 64)");
