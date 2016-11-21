@@ -237,8 +237,8 @@ R_FindPlane
     if (check < lastvisplane)
 	return check;
 		
-    if ((!doom_plus_limits && lastvisplane - visplanes == MAXVISPLANES / DOOM_PLUS_MAXVISPLANES_FACTOR) 
-        || (doom_plus_limits && lastvisplane - visplanes == MAXVISPLANES))
+    if (lastvisplane - visplanes == (doom_plus_limits ? MAXVISPLANES : 
+        MAXVISPLANES / DOOM_PLUS_MAXVISPLANES_FACTOR))
 	I_Error ("R_FindPlane: no more visplanes");
 		
     lastvisplane++;
@@ -370,8 +370,8 @@ void R_DrawPlanes (void)
     int                 lumpnum;
 				
 #ifdef RANGECHECK
-    if ((!doom_plus_limits && ds_p - drawsegs > MAXDRAWSEGS / DOOM_PLUS_MAXDRAWSEGS_FACTOR)
-        || (doom_plus_limits && ds_p - drawsegs > MAXDRAWSEGS))
+    if (ds_p - drawsegs > (doom_plus_limits ? MAXDRAWSEGS :
+        MAXDRAWSEGS / DOOM_PLUS_MAXDRAWSEGS_FACTOR))
 	I_Error ("R_DrawPlanes: drawsegs overflow (%i)",
 		 ds_p - drawsegs);
     
@@ -379,8 +379,8 @@ void R_DrawPlanes (void)
 	I_Error ("R_DrawPlanes: visplane overflow (%i)",
 		 lastvisplane - visplanes);
     
-    if ((!doom_plus_limits && lastopening - openings > MAXOPENINGS / DOOM_PLUS_MAXOPENINGS_FACTOR)
-        || (doom_plus_limits && lastopening - openings > MAXOPENINGS))
+    if (lastopening - openings > (doom_plus_limits ? MAXOPENINGS :
+        MAXOPENINGS / DOOM_PLUS_MAXOPENINGS_FACTOR))
 	I_Error ("R_DrawPlanes: opening overflow (%i)",
 		 lastopening - openings);
 #endif

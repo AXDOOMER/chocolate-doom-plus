@@ -1463,8 +1463,8 @@ void P_SpawnSpecials (void)
 	switch(lines[i].special)
 	{
 	  case 48:
-            if ((!doom_plus_limits && numlinespecials >= MAXLINEANIMS / DOOM_PLUS_MAXLINEANIMS_FACTOR)
-                || (doom_plus_limits && numlinespecials >= MAXLINEANIMS))
+            if (numlinespecials >= (doom_plus_limits ? MAXLINEANIMS : 
+                MAXLINEANIMS / DOOM_PLUS_MAXLINEANIMS_FACTOR))
             {
                 I_Error("Too many scrolling wall linedefs!");
             }
